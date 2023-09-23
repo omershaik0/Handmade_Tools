@@ -26,5 +26,7 @@ python ssh_bruteforce.py
 
 4. The script will attempt to log in using the provided credentials, and it will display successful logins if found.
 
+   ![Script Execution](https://github.com/omershaik0/Handmade_Tools/blob/main/SSH_Bruteforcer/execution.png)
+
 ## Disclaimer
 This tool should only be used for ethical and legal purposes, such as testing the security of your own systems or with explicit permission from the system owner. Unauthorized use of this script for malicious purposes is strictly prohibited.
