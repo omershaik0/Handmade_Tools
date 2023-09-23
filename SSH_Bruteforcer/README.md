@@ -1,7 +1,7 @@
 # SSH Bruteforce Script
 
 ## Description
-This Python script is a simple SSH brute-force tool designed for educational and security testing purposes. It allows you to automate the process of attempting to log in to an SSH server using a list of usernames and a wordlist of passwords.
+This Python script is a simple SSH brute-force tool designed for educational and security testing purposes. It allows you to automate the process of attempting to log in to an SSH server using a username and a wordlist of passwords.
 
 ## Features
 - SSH brute-force attacks with customizable parameters.
