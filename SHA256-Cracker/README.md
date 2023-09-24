@@ -26,5 +26,4 @@ Before you begin, ensure you have met the following requirements:
    python sha256_cracker.py <SHA256_Hash> <Wordlist_File>
    python sha256_cracker.py f89e9192d8a0e3ebc1d01cabaefb35da06a8ac21ca57d0e92a4d40b4b21e22b1 wordlist.txt or path to the wordlist.
 
-
 ![Script Execution](https://github.com/omershaik0/Handmade_Tools/blob/main/SHA256-Cracker/cracked.png)
