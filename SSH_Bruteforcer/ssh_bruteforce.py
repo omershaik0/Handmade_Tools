@@ -35,4 +35,4 @@ for x in lines:
         break
     except Exception:
         # Print a failure message if the connection fails
-        print("Failed to establish a connection.")
+        print(f"[X] Trying User: {SSH_USER} Password: {x}")
